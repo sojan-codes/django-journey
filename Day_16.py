@@ -61,22 +61,23 @@ print(p.price)
 
 # Inheritance
 class Vechicle:
-    def __init__(self, brand, wheels = 4):
+    def __init__(self, brand):
         self.brand = brand
-        self.wheels = wheels
+        self.wheels = 4
 
     def info(self):
         return f"{self.brand} has {self.wheels} wheels"
 
 class Car(Vechicle):
-    def __init__(self, brand, wheels = 4):
-        super().__init__(brand, wheels)
+    def __init__(self, brand):
+        super().__init__(brand)
 
         
 class Bike(Vechicle):
-    def __init__(self, brand, wheels, has_carrier):
-        super().__init__(brand, wheels)
+    def __init__(self, brand, has_carrier):
+        super().__init__(brand)
         self.has_carrier = has_carrier
+        self.wheels = 2
         
         
     def info(self):
@@ -86,16 +87,16 @@ class Bike(Vechicle):
             return (f"{self.brand} has {self.wheels} wheels (Carrier: No)")
         
 class ElectricCar(Car):
-    def __init__(self, brand, wheels, battery_kwh):
-        super().__init__(brand, wheels = 4)
+    def __init__(self, brand, battery_kwh):
+        super().__init__(brand)
         self.battery_kwh = battery_kwh
     
     def info(self):
         return f"{self.brand} has {self.wheels} wheels and Battery Kwh : {self.battery_kwh}"
             
 c = Car("Toyota")
-b = Bike("Yamaha", 2, True)
-e = ElectricCar("Tesla", 4, battery_kwh=200)
+b = Bike("Yamaha", True)
+e = ElectricCar("Tesla", battery_kwh=200)
 
 print(c.info())
 print(b.info())
