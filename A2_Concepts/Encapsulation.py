@@ -12,9 +12,7 @@ class Employee:
         return bonus
 
 
-class Manager(
-    Employee
-):  # Python will automatically inherit constructor of its parent class automatically.
+class Manager(Employee):  # Python will automatically inherit constructor of its parent class automatically.
     def show_bonus(self):
         print(f"Bonus: {self._calculate_bonus()}")
 
